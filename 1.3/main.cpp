@@ -14,7 +14,7 @@ int main(void)
 	int n;
 	cin >> n;
 
-	FibonacciGenerator<int> * end_gen = new FibonacciGenerator<int>();
+	FibonacciGenerator * end_gen = new FibonacciGenerator();
 
 	int end = 0;
 	int beg = 0;
@@ -27,7 +27,7 @@ int main(void)
 		end_sum += end;
 
 		beg_sum = 0;
-		FibonacciGenerator<int> * beg_gen = new FibonacciGenerator<int>();
+		FibonacciGenerator * beg_gen = new FibonacciGenerator();
 		while(beg < end)
 		{	
 			if(end_sum - beg_sum == n)
@@ -43,6 +43,8 @@ int main(void)
 		delete beg_gen;
 	}
 
+	delete end_gen;
+	
 	cout << "NIE" << endl;
 	return 0;
 }

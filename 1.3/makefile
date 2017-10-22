@@ -30,3 +30,6 @@ run: default
 	@echo
 	@echo
 	@./$(BUILD_DIRECTORY)/$(PROJECT_NAME).out
+
+test: default
+	@nosetests
