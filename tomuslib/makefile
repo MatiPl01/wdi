@@ -1,50 +1,59 @@
 CC = g++
-UNITY = ../unittests/unity
+UNITY = ../unit$(TEST_DIR)/unity
 INCLUDES = inc/
-
-BUILD_DIRECTORY = build
 
 PROJECT_NAME = libtomus
 
-SOURCES = $(wildcard src/*.cpp)
-_OBJECTS = $(patsubst src%, build%, $(SOURCES))
+BUILD_DIR = build
+SOURCE_DIR = src
+TEST_DIR = tests
+TEST_BUILD_DIR = tests/build
+
+SOURCES = $(wildcard $(SOURCE_DIR)/*.cpp)
+_OBJECTS = $(patsubst $(SOURCE_DIR)%, $(BUILD_DIR)%, $(SOURCES))
 OBJECTS = $(patsubst %.cpp, %.o, $(_OBJECTS))
 
-TEST_CASES = $(wildcard tests/*.cpp)
-TEST_RUNNERS = $(patsubst tests/%.cpp, tests/%_runner.cpp, $(TEST_CASES))
-TEST_RUNNERS_EXE = $(patsubst tests/%_runner.cpp, tests/%_runner, $(TEST_RUNNERS))
+TEST_CASES = $(wildcard $(TEST_DIR)/*.cpp)
+TEST_RUNNERS = $(patsubst $(TEST_DIR)/%.cpp, $(TEST_BUILD_DIR)/%_runner.cpp, $(TEST_CASES))
+TEST_RUNNERS_EXE = $(patsubst $(TEST_BUILD_DIR)/%_runner.cpp, $(TEST_BUILD_DIR)/%_runner, $(TEST_RUNNERS))
 
 UNITY_SCRIPTS = $(UNITY)/auto
+UNITY_SOURCES = $(wildcard $(UNITY)/src/*.c)
+UNITY_INCLUDE = $(UNITY)/src
 
-.PHONY: default setup clean test unit_tests python_tests
+.PHONY: default setup clean test unit_test python_test
 
 default ($PROJECT_NAME): $(OBJECTS)
 	@echo Creating library $(PROJECT_NAME).a
-	@$(AR) rcs $(BUILD_DIRECTORY)/$(PROJECT_NAME).a $(OBJECTS)
+	@$(AR) rcs $(BUILD_DIR)/$(PROJECT_NAME).a $(OBJECTS)
 
-$(BUILD_DIRECTORY)/%.o: src/%.cpp $(BUILD_DIRECTORY)
+$(BUILD_DIR)/%.o: src/%.cpp $(BUILD_DIR)
 	@echo Compiling file $<
 	@$(CC) -c $< -o $@ -I $(INCLUDES)
 
-$(BUILD_DIRECTORY):
-	@mkdir $(BUILD_DIRECTORY)
+$(BUILD_DIR):
+	@mkdir $(BUILD_DIR)
 
 clean:
 	@echo Cleaning project
-	@$(RM) -rf $(BUILD_DIRECTORY)
-	@$(RM) $(TEST_RUNNERS) $(TEST_RUNNERS_EXE)
+	@$(RM) -rf $(BUILD_DIR)
+	@$(RM) -rf $(TEST_BUILD_DIR)
 
-test: default unit_tests python_test
+test: default unit_test python_test
 
 python_test:
-	nosetests
+	@nosetests
 
-unit_tests: $(TEST_RUNNERS_EXE)
+unit_test: $(TEST_RUNNERS_EXE)
 
-tests/%_runner: tests/%_runner.cpp tests/%.cpp
-	$(CC) $^ $(UNITY)/src/*.c -o $@ -I $(INCLUDES) -I $(UNITY)/src
-	./$@
+$(TEST_BUILD_DIR)/%_runner: $(TEST_BUILD_DIR)/%_runner.cpp $(TEST_DIR)/%.cpp
+	@$(CC) $^ $(UNITY_SOURCES) -o $@ -I $(INCLUDES) -I $(UNITY_INCLUDE) -I $(SOURCE_DIR)
+	@./$@
 
-tests/%_runner.cpp: tests/%.cpp
-	ruby $(UNITY_SCRIPTS)/generate_test_runner.rb $< $@
+.PRECIOUS: $(TEST_BUILD_DIR)/%_runner.cpp
+$(TEST_BUILD_DIR)/%_runner.cpp: $(TEST_DIR)/%.cpp $(TEST_BUILD_DIR)
+	@ruby $(UNITY_SCRIPTS)/generate_test_runner.rb $< $@
+
+$(TEST_BUILD_DIR):
+	@mkdir $(TEST_BUILD_DIR)
 
