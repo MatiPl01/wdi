@@ -1,5 +1,5 @@
 TOMUSLIB = ../tomuslib/
-INCLUDES = $(TOMUSLIB)/inc/
+INCLUDES = $(TOMUSLIB)/inc
 TOMUSLIB_FILE = $(TOMUSLIB)/inc/libtomus.a
 CC = g++
 
@@ -12,7 +12,7 @@ OBJECTS=$(SOURCES:.cpp=.o)
 
 default ($PROJECT_NAME): $(OBJECTS)
 	@echo Creating executable $(PROJECT_NAME).out
-	@cd $(BUILD_DIRECTORY) && $(CC) $(OBJECTS) -o $(PROJECT_NAME).out
+	@cd $(BUILD_DIRECTORY) && $(CC) $(OBJECTS) $(TOMUSLIB_FILE) -o $(PROJECT_NAME).out
 
 .cpp.o: setup
 	@echo Compiling file $<
@@ -33,3 +33,6 @@ run: default
 
 test: default
 	@nosetests
+
+tomuslib:
+	@cd $(TOMUSLIB) && make

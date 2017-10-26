@@ -5,7 +5,7 @@ CC = g++
 
 BUILD_DIRECTORY = build
 
-PROJECT_NAME = default
+PROJECT_NAME = aliquots
 
 SOURCES = $(wildcard *.cpp)
 OBJECTS=$(SOURCES:.cpp=.o)
