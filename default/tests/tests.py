@@ -15,7 +15,7 @@ class ExeTest(unittest.TestCase):
 		assert result == stdout, bytes(result, 'ascii')
 		proc.wait()
 
-	def test_1(self):
-		self.execute(path='build/default.out',
-			    		stdin='1',
-			    		stdout='1')
+	def test_fibonacci(self):
+		self.execute(path='build/app.out',
+			    		stdin='',
+			    		stdout='0 1 1 2 3 5 8 13 21 34')

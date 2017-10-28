@@ -1,5 +1,5 @@
 CC = g++
-UNITY = ../unit$(TEST_DIR)/unity
+UNITY = ../unittests/unity
 INCLUDES = inc/
 
 PROJECT_NAME = libtomus
@@ -56,4 +56,3 @@ $(TEST_BUILD_DIR)/%_runner.cpp: $(TEST_DIR)/%.cpp $(TEST_BUILD_DIR)
 
 $(TEST_BUILD_DIR):
 	@mkdir $(TEST_BUILD_DIR)
-
