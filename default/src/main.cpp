@@ -2,7 +2,7 @@
 #include <iostream>
 #include "fibonacciGenerator.h"
 
-usign namespace std;
+using namespace std;
 
 int main(void)
 {
