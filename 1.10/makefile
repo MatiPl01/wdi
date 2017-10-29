@@ -24,7 +24,7 @@ UNITY_SCRIPTS = $(UNITY)/auto
 UNITY_SOURCES = $(wildcard $(UNITY)/src/*.c)
 UNITY_INCLUDE = $(UNITY)/src
 
-.PHONY: default setup clean test unit_test python_test
+.PHONY: default setup clean test unit_test python_test $(TOMUSLIB)
 
 default $(BUILD_DIR)/$(PROJECT_NAME).out: $(OBJECTS) $(TOMUSLIB)
 	@echo Creating executable $(PROJECT_NAME).out

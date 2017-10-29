@@ -1,15 +1,16 @@
 #include <cstdio>
-#include "fibonacciGenerator.h"
+#include <iostream>
+#include "myMath.h"
+
+using namespace std;
 
 int main(void)
 {
-	FibonacciGenerator generator;
+	int a, b, c;
+	cin >> a >> b >> c;
 
-	for(int i = 0; i < 10; i++)
-	{
-		printf("%d ", generator.next());
-	}
-	printf("\n");
+	printf("%d\n", nww(nww(a, b), c));
 
 	return 0;
 }
+
