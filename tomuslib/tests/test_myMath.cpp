@@ -1,7 +1,7 @@
 #include "unity.h"
 #include <cstdio>
 
-#include "myMath.cpp"
+#include "../src/myMath.cpp"
 
 void test_int_sqrt(void)
 {

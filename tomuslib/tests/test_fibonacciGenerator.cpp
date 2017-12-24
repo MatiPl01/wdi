@@ -1,7 +1,7 @@
 #include "unity.h"
 #include <cstdio>
 
-#include "fibonacciGenerator.cpp"
+#include "../src/fibonacciGenerator.cpp"
 
 void test_default_initializers(void)
 {

@@ -4,6 +4,7 @@
 
 using namespace std;
 
+#ifndef TEST
 int main()
 {
 	int a, b;
@@ -15,6 +16,7 @@ int main()
 
 	return 0;
 }
+#endif
 
 int add(int a, int b)
 {

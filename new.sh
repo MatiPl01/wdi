@@ -1,3 +1,3 @@
 #! /bin/sh
 
-cp -r default $1
+cp -r default_cmake $1
