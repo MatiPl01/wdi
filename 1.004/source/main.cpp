@@ -12,8 +12,8 @@ using namespace std;
  * numerowi bieżącego roku.
  */
 
-bool has_substring(vector<int> & sequence);
-bool substring_searcher(vector<int> & sequence, int index, bool * summary);
+bool has_substring(vector< int > & sequence);
+bool substring_searcher(vector< int > & sequence, int index, bool * summary);
 
 const int N = 2017;
 
@@ -21,8 +21,8 @@ const int N = 2017;
 int main(void)
 {
   FibonacciGenerator * gen = new FibonacciGenerator();
-  vector<int> sequence;
-  int element;
+  vector< int >        sequence;
+  int                  element;
   do
   {
     element = gen->next();
@@ -34,7 +34,7 @@ int main(void)
 }
 #endif
 
-bool has_substring(vector<int> & sequence)
+bool has_substring(vector< int > & sequence)
 {
   bool * summary = new bool[sequence.size()];
   memset(summary, 0, sequence.size() * sizeof(bool));
@@ -43,7 +43,7 @@ bool has_substring(vector<int> & sequence)
   return result;
 }
 
-bool substring_searcher(vector<int> & sequence, int index, bool * summary)
+bool substring_searcher(vector< int > & sequence, int index, bool * summary)
 {
   if(index == sequence.size())
   {
@@ -57,7 +57,7 @@ bool substring_searcher(vector<int> & sequence, int index, bool * summary)
   }
   else
   {
-    bool   result   = false;  
+    bool   result   = false;
     bool * summary1 = new bool[sequence.size()];
     bool * summary2 = new bool[sequence.size()];
 
