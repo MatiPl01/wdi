@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.5)
 project(wdi C CXX)
 enable_testing()
-add_custom_target(check COMMAND ctest --output-on-failure -j)
+include(ProcessorCount)
+ProcessorCount(N)
+add_custom_target(check COMMAND ctest --output-on-failure -j${N})
 add_subdirectory(unitylib)
 
 find_program(CMAKE_NOSE_EXECUTABLE nosetests)
