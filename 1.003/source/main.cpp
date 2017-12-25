@@ -1,14 +1,16 @@
 #include <cstdio>
 #include <iostream>
 
-#include "FibonacciGenerator.h"
+#include "fibonacciGenerator.h"
 
 using namespace std;
 
 /**
- * Finds out if exist substring which adds up to given number
+ * Napisać program sprawdzający czy istnieje spójny podciąg ciągu Fibonacciego o zadanej
+ * sumie.
  */
 
+#ifndef TEST
 int main(void)
 {
   int n;
@@ -48,3 +50,4 @@ int main(void)
   cout << "NIE" << endl;
   return 0;
 }
+#endif

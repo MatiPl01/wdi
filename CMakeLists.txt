@@ -13,6 +13,7 @@ function(createTask TASK_NAME SOURCE_DIR TEST_DIR)
 
   file                  (GLOB SOURCES ${SOURCE_DIR}/*.c*)
   add_executable        (${TASK_NAME} ${SOURCES})
+  target_link_libraries (${TASK_NAME} tomuslib)
   add_custom_command    (TARGET ${TASK_NAME} 
                          POST_BUILD COMMAND cp ${TASK_NAME} test_me)
 
@@ -26,13 +27,13 @@ function(createTask TASK_NAME SOURCE_DIR TEST_DIR)
   foreach(test ${TEST_SOURCES})
       get_filename_component(TEST_NAME ${test} NAME_WE)
       createTest(${TASK_NAME}_${TEST_NAME} ${test})
+      target_link_libraries(${TASK_NAME}_${TEST_NAME} tomuslib)
   endforeach()
 
   add_test(NAME ${TASK_NAME}_pythontest 
            COMMAND ${CMAKE_NOSE_EXECUTABLE} ${TEST_DIR}
            WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
   add_dependencies(check ${TASK_NAME})
-  add_dependencies(${TASK_NAME} tomuslib)
 
 endfunction()
 
