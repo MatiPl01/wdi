@@ -9,10 +9,10 @@ using namespace std;
 
 int main(void)
 {
-	int n;
-	cin >> n;
-	for(int tmp = 1; tmp <= n; tmp++)
-		if(n % tmp == 0)
-			cout << tmp << " ";
-	return 0;
+  int n;
+  cin >> n;
+  for(int tmp = 1; tmp <= n; tmp++)
+    if(n % tmp == 0)
+      cout << tmp << " ";
+  return 0;
 }

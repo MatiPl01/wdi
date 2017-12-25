@@ -7,18 +7,18 @@ using namespace std;
 #ifndef TEST
 int main()
 {
-	int a, b;
-	cin >> a >> b;
+  int a, b;
+  cin >> a >> b;
 
-	int c = add(a, b);
+  int c = add(a, b);
 
-	cout << c;
+  cout << c;
 
-	return 0;
+  return 0;
 }
 #endif
 
 int add(int a, int b)
 {
-	return a + b;
+  return a + b;
 }

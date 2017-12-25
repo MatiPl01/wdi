@@ -4,23 +4,23 @@
 
 int main(void)
 {
-	for(int i = 1; i < 1000000; i++)
-	{
-		int n = i;
-		int sum = 0;
+  for(int i = 1; i < 1000000; i++)
+  {
+    int n   = i;
+    int sum = 0;
 
-		for(int tmp = 1; tmp <= n/2; tmp++)
-		{
-			if(n % tmp == 0)
-			{
-				sum += tmp;
-			}
-		}
-		if(sum == n)
-		{
-			printf("%d\n", n);
-		}
-	}
+    for(int tmp = 1; tmp <= n / 2; tmp++)
+    {
+      if(n % tmp == 0)
+      {
+        sum += tmp;
+      }
+    }
+    if(sum == n)
+    {
+      printf("%d\n", n);
+    }
+  }
 
-	return 0;
+  return 0;
 }

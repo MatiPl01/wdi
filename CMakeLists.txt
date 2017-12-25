@@ -57,3 +57,8 @@ list(REMOVE_ITEM SUB_DIRS unitylib)
 FOREACH(subdir ${SUB_DIRS})
   ADD_SUBDIRECTORY(${subdir})
 ENDFOREACH()
+
+add_custom_target(format ALL
+                  COMMAND find ${CMAKE_CURRENT_LIST_DIR} -iname *.h -o -iname *.cpp -o -iname *.c | xargs clang-format -i -style=file
+                  COMMENT "Formating code"
+                  WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR})

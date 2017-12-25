@@ -11,13 +11,13 @@ using namespace std;
 
 int main(void)
 {
-	int n;
-	cin >> n;
+  int n;
+  cin >> n;
 
-	if(is_prime(n))
-		cout << "TAK" << endl;
-	else
-		cout << "NIE" << endl;
+  if(is_prime(n))
+    cout << "TAK" << endl;
+  else
+    cout << "NIE" << endl;
 
-	return 0;
+  return 0;
 }

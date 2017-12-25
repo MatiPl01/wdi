@@ -2,16 +2,16 @@
  * Fibonacci sequence generator class
  */
 
-class FibonacciGenerator 
+class FibonacciGenerator
 {
-private:
-	int element;
-	int f0;
-	int f1;
+  private:
+  int element;
+  int f0;
+  int f1;
 
-public:
-	FibonacciGenerator();
-	FibonacciGenerator(int a, int b);
-	
-	int next();
+  public:
+  FibonacciGenerator();
+  FibonacciGenerator(int a, int b);
+
+  int next();
 };
