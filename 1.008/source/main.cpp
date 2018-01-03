@@ -1,7 +1,13 @@
-#include <cstdio>
+#include <iostream>
 
-// Finds perfect numbers below 1 000 000
+using namespace std;
 
+/**
+ * Finds perfect numbers below 1 000 000
+ * Napisać program wyszukujący liczby doskonałe mniejsze od miliona
+ */
+
+#ifndef TEST
 int main(void)
 {
   for(int i = 1; i < 1000000; i++)
@@ -24,3 +30,4 @@ int main(void)
 
   return 0;
 }
+#endif
