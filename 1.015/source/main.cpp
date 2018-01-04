@@ -8,6 +8,11 @@ using namespace std;
  * Zmodyfikować wzór Newtona aby program z poprzedniego zadania obliczał pierwiastek stopnia 3.
  */
 
+float absolute(float a)
+{
+  return a < 0 ? -a : a;
+}
+
 #ifndef TEST
 int main(void)
 {
@@ -17,7 +22,7 @@ int main(void)
   float a       = n / 2;
   float epsilon = 0.001;
 
-  while(abs((n / (a * a)) - a) > epsilon)
+  while(absolute((n / (a * a)) - a) > epsilon)
   {
     a = (a + (n / (a * a))) / 2;
   }

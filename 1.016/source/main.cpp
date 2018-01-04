@@ -12,6 +12,11 @@ double f(double x)
   return (x * x * x) - 2017;
 }
 
+float absolute(float a)
+{
+  return a < 0 ? -a : a;
+}
+
 #ifndef TEST
 int main(void)
 {
@@ -30,7 +35,7 @@ int main(void)
   double avr     = (beg + end) / 2;
   double y       = f(avr);
 
-  while(abs(y) > epsilon)
+  while(absolute(y) > epsilon)
   {
     if(y < 0)
       beg = avr;
