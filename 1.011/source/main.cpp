@@ -1,24 +1,21 @@
+#include <cstdio>
 #include <iostream>
-
-#include "main.h"
+#include "myMath.h"
 
 using namespace std;
 
+/**
+ * Napisać program wyznaczający najmniejszą wspólną wielokrotność 3 zadanych liczb.
+ */
+
 #ifndef TEST
-int main()
+int main(void)
 {
-  int a, b;
-  cin >> a >> b;
+  int a, b, c;
+  cin >> a >> b >> c;
 
-  int c = add(a, b);
-
-  cout << c;
+  printf("%d\n", nww(nww(a, b), c));
 
   return 0;
 }
 #endif
-
-int add(int a, int b)
-{
-  return a + b;
-}

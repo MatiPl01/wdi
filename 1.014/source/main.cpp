@@ -1,24 +1,32 @@
+#include <cstdio>
 #include <iostream>
-
-#include "main.h"
 
 using namespace std;
 
-#ifndef TEST
-int main()
+/**
+ * Napisać program wyznaczający pierwiastek kwadratowy ze wzoru Newtona
+ */
+
+float absolute(float a)
 {
-  int a, b;
-  cin >> a >> b;
+  return a < 0 ? -a : a;
+}
 
-  int c = add(a, b);
+#ifndef TEST
+int main(void)
+{
+  float n;
+  cin >> n;
 
-  cout << c;
+  float a       = n / 2;
+  float epsilon = 0.001;
 
+  while(absolute((n / a) - a) > epsilon)
+  {
+    a = (a + (n / a)) / 2;
+  }
+
+  printf("%f\n", a);
   return 0;
 }
 #endif
-
-int add(int a, int b)
-{
-  return a + b;
-}

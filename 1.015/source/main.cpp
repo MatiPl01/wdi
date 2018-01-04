@@ -1,24 +1,28 @@
+#include <cstdio>
 #include <iostream>
-
-#include "main.h"
+#include "myMath.h"
 
 using namespace std;
 
+/**
+ * Zmodyfikować wzór Newtona aby program z poprzedniego zadania obliczał pierwiastek stopnia 3.
+ */
+
 #ifndef TEST
-int main()
+int main(void)
 {
-  int a, b;
-  cin >> a >> b;
+  float n;
+  cin >> n;
 
-  int c = add(a, b);
+  float a       = n / 2;
+  float epsilon = 0.001;
 
-  cout << c;
+  while(abs((n / (a * a)) - a) > epsilon)
+  {
+    a = (a + (n / (a * a))) / 2;
+  }
 
+  printf("%f\n", a);
   return 0;
 }
 #endif
-
-int add(int a, int b)
-{
-  return a + b;
-}

@@ -328,7 +328,7 @@ Tablica t\*N+ jest wypełniona liczbami naturalnymi. Skok z pola i-tego można w
 Do budowy liczby naturalnej reprezentowanej w systemie dwójkowym możemy użyd A cyfr 1 oraz B cyfr 0, gdzie A,B>0. Proszę napisad funkcję, która dla zadanych parametrów A i B zwraca ilośd wszystkich możliwych do zbudowania liczb, takich że pierwsza cyfra w systemie dwójkowym (najstarszy bit) jest równa 1, a zbudowana liczba jest złożona. Na przykład dla A=2, B=3 ilośd liczb wynosi 3, są to 10010(2) 10100(2) 11000(2)
 
 ##6.027 
-Dane są definicje: struct kwadrat { int x1,x2,y1,y2; }; kwadrat t[N]; gdzie x1,x2,y1,y2 oznaczają proste ograniczające kwadrat (x1<x2,y1<y2). Proszę napisad funkcję, która zwraca wartośd logiczną true, jeśli danej tablicy można znaleźd 13 nienachodzących na siebie kwadratów, których suma pól jest rów na 2012 i false w przeciwnym przypadku.
+Dane są definicje: struct kwadrat { int x1,x2,y1,y2; }; kwadrat t[N]; gdzie x1,x2,y1,y2 oznaczają proste ograniczające kwadrat (x1<\x2,y1<\y2). Proszę napisad funkcję, która zwraca wartośd logiczną true, jeśli danej tablicy można znaleźd 13 nienachodzących na siebie kwadratów, których suma pól jest rów na 2012 i false w przeciwnym przypadku.
 
 ##6.028 
 Dany jest zbiór n liczb naturalnych umieszczony w tablicy int t[N+. Proszę napisad funkcję, która zwraca informację, czy jest możliwy podział zbioru n liczb na trzy podzbiory, tak aby w każdym podzbiorze, łączna liczba jedynek użyta do zapisu elementów tego podzbioru w systemie dwójkowym była jednakowa. Na przykład: {2,3,5,7,15} ->true, bo podzbiory {2,7} {3,5} {15} wymagają użycia 4 jedynek, ,5,7,15- ->false, podział nie istnieje.
@@ -346,7 +346,7 @@ Mamy daną liczbę całkowitą. W tablicy jednowymiarowej należy znaleźd n lic
 Dane są definicje: struct punkt { float x,y,z; }; punkt t[N]; Tablica t zawiera współrzędne N punktów leżących w przestrzeni. Punkty posiadają jednostkową masę. Proszę napisad funkcję, która sprawdza czy istnieje podzbiór punktówliczący co najmniej 3 punkty, którego środek ciężkości leży w odległości nie większej niż r od początku układu współrzędnych. Do funkcji należy przekazad tablicę t oraz promieo r, funkcja powinna zwrócid wartośd typu bool.
 
 ##6.033 
-Dane są definicje: struct punkt { float x,y; }; punkt t[N]; Tablica t zawiera współrzędne N punktów leżących na płaszczyźnie. Punkty posiadają jednostkową masę. Proszę napisad funkcję, która sprawdza czy istnieje niepusty podzbiór n punktów, gdzie n<k oraz n jest wielokrotnością liczby 3, którego środek ciężkości leży w odległości mniejszej niż r od początku układu współrzędnych. Do funkcji należy przekazad dokładnie 3 parametry: tablicę t, promieo r, oraz ograniczenie k, funkcja powinna zwrócid wartośd typu bool.
+Dane są definicje: struct punkt { float x,y; }; punkt t[N]; Tablica t zawiera współrzędne N punktów leżących na płaszczyźnie. Punkty posiadają jednostkową masę. Proszę napisad funkcję, która sprawdza czy istnieje niepusty podzbiór n punktów, gdzie n<\k oraz n jest wielokrotnością liczby 3, którego środek ciężkości leży w odległości mniejszej niż r od początku układu współrzędnych. Do funkcji należy przekazad dokładnie 3 parametry: tablicę t, promieo r, oraz ograniczenie k, funkcja powinna zwrócid wartośd typu bool.
 
 ##build
 Katalog  z drzewem budowania

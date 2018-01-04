@@ -1,24 +1,47 @@
+#include <cstdio>
 #include <iostream>
-
-#include "main.h"
 
 using namespace std;
 
-#ifndef TEST
-int main()
+/**
+ * Napisać program rozwiązujący równanie x^x^x=2017 metodą bisekcji.
+ */
+
+double f(double x)
 {
-  int a, b;
-  cin >> a >> b;
+  return (x * x * x) - 2017;
+}
 
-  int c = add(a, b);
+#ifndef TEST
+int main(void)
+{
+  double beg = 0, end = 2017;
 
-  cout << c;
+  double y_beg = f(beg);
+  double y_end = f(end);
+  if(y_beg > y_end)
+  {
+    double tmp = end;
+    end        = beg;
+    beg        = end;
+  }
+
+  double epsilon = 0.0000000001;
+  double avr     = (beg + end) / 2;
+  double y       = f(avr);
+
+  while(abs(y) > epsilon)
+  {
+    if(y < 0)
+      beg = avr;
+    else
+      end = avr;
+    avr   = (beg + end) / 2;
+    y     = f(avr);
+  }
+
+  printf("%f\n", avr);
 
   return 0;
 }
 #endif
-
-int add(int a, int b)
-{
-  return a + b;
-}

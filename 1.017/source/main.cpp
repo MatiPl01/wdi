@@ -1,24 +1,29 @@
+#include <cstdio>
 #include <iostream>
-
-#include "main.h"
 
 using namespace std;
 
+/**
+ * Napisać program wyznaczający wartość liczby e korzystając z zależności: e = 1/0! + 1/1! + 1/2! +
+ * 1/3! + ...
+ */
+
 #ifndef TEST
-int main()
+int main(void)
 {
-  int a, b;
-  cin >> a >> b;
+  int    i       = 1;
+  double element = 1;
+  double silnia  = 1;
+  double e       = 0;
+  while(element != 0)
+  {
+    element = 1 / silnia;
+    silnia  = silnia * i++;
+    e += element;
+  }
 
-  int c = add(a, b);
-
-  cout << c;
+  printf("%f\n", e);
 
   return 0;
 }
 #endif
-
-int add(int a, int b)
-{
-  return a + b;
-}
