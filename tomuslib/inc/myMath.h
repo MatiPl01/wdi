@@ -18,3 +18,8 @@ int nwd(int, int);
  * Calculate NWW
  */
 int nww(int, int);
+
+/**
+ * Calculate cos using maclaurin method
+ */
+double cos(double x);
