@@ -3,8 +3,6 @@
 #include "unity.h"
 #include "../source/main.cpp"
 
-//double abs(double x) { return x < 0 ? x * -1.0 : x; }
-
 void test_cos(void)
 {
   const double epsilon = 0.1;
