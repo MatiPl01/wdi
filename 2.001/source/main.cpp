@@ -1,24 +1,60 @@
 #include <iostream>
 
-#include "main.h"
-
 using namespace std;
+
+/**
+ * Napisz program wczytujący liczbę naturalną z klawiatury i odpowiadający na pytanie, czy liczba ta jest iloczynem dowolnych dwóch kolejnych wyrazów ciągu Fibonacciego.
+ */
+
+int fibbonacci()
+{
+  static int n  = 0;
+  static int f1 = 0;
+  static int f2 = 1;
+
+  if(n == 0)
+  {
+    n++;
+    return 0;
+  }
+  else if(n == 1)
+  {
+    n++;
+    return 1;
+  }
+  else
+  {
+    n++;
+    int result = f1 + f2;
+    int f2_tmp = f2;
+    f2 = f1 + f2;
+    f1 = f2_tmp;
+    return result;
+  }
+}
 
 #ifndef TEST
 int main()
 {
-  int a, b;
-  cin >> a >> b;
+  int a;
+  cin >> a;
 
-  int c = add(a, b);
+  int fibbonacci_prev = fibbonacci();
+  int fibbonacci_curr = fibbonacci();
+  bool result = false;
 
-  cout << c;
+  while(a >= fibbonacci_curr && !result)
+  {
+    if(fibbonacci_prev + fibbonacci_curr == a)
+      result = true;
+
+    fibbonacci_prev = fibbonacci_curr;
+    fibbonacci_curr = fibbonacci();
+  }
+
+  if(result) cout << "TAK" << endl;
+  else cout << "NIE" << endl;
 
   return 0;
 }
 #endif
-
-int add(int a, int b)
-{
-  return a + b;
-}
