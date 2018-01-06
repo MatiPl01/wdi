@@ -3,7 +3,8 @@
 using namespace std;
 
 /**
- * Napisz program wczytujący liczbę naturalną z klawiatury i odpowiadający na pytanie, czy liczba ta jest iloczynem dowolnych dwóch kolejnych wyrazów ciągu Fibonacciego.
+ * Napisz program wczytujący liczbę naturalną z klawiatury i odpowiadający na pytanie, czy liczba ta
+ * jest iloczynem dowolnych dwóch kolejnych wyrazów ciągu Fibonacciego.
  */
 
 int fibbonacci()
@@ -27,8 +28,8 @@ int fibbonacci()
     n++;
     int result = f1 + f2;
     int f2_tmp = f2;
-    f2 = f1 + f2;
-    f1 = f2_tmp;
+    f2         = f1 + f2;
+    f1         = f2_tmp;
     return result;
   }
 }
@@ -39,9 +40,9 @@ int main()
   int a;
   cin >> a;
 
-  int fibbonacci_prev = fibbonacci();
-  int fibbonacci_curr = fibbonacci();
-  bool result = false;
+  int  fibbonacci_prev = fibbonacci();
+  int  fibbonacci_curr = fibbonacci();
+  bool result          = false;
 
   while(a >= fibbonacci_curr && !result)
   {
@@ -52,8 +53,10 @@ int main()
     fibbonacci_curr = fibbonacci();
   }
 
-  if(result) cout << "TAK" << endl;
-  else cout << "NIE" << endl;
+  if(result)
+    cout << "TAK" << endl;
+  else
+    cout << "NIE" << endl;
 
   return 0;
 }

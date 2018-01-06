@@ -64,7 +64,7 @@ int nww(int a, int b)
 double cos(double x)
 {
   const int N = 100;
-  
+
   double cos       = 1;
   double numerator = 1;
   double factorial = 2;

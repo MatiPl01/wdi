@@ -17,8 +17,22 @@ class ExeTest(unittest.TestCase):
         assert result == stdout, bytes(result)
         proc.wait()
 
-    def test_fibonacci(self):
-        pass
-        # self.execute(path='./test_me',
-        #               stdin='',
-        #               stdout='0 1 1 2 3 5 8 13 21 34')
+    def test_fibonacci2(self):
+        self.execute(path='./test_me',
+                      stdin='2',
+                      stdout='TAK')
+
+    def test_fibonacci3(self):
+        self.execute(path='./test_me',
+                      stdin='3',
+                      stdout='NIE')
+
+    def test_fibonacci4(self):
+        self.execute(path='./test_me',
+                      stdin='4',
+                      stdout='NIE')
+
+    def test_fibonacci6(self):
+        self.execute(path='./test_me',
+                      stdin='6',
+                      stdout='TAK')
