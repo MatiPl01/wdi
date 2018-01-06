@@ -3,7 +3,10 @@ project(wdi C CXX)
 enable_testing()
 include(ProcessorCount)
 ProcessorCount(N)
-add_custom_target(check COMMAND ctest --output-on-failure -j${N})
+message("Detected " ${N} " CPU cores")
+add_custom_target(check 
+                  COMMENT "Running tests using ${N} CPU cores"
+                  COMMAND ctest --output-on-failure -j${N})
 add_subdirectory(unitylib)
 
 find_program(CMAKE_NOSE_EXECUTABLE nosetests)
