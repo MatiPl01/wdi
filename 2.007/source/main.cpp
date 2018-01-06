@@ -10,7 +10,7 @@ using namespace std;
 #ifndef TEST
 int main()
 {
-  int  x;
+  int x;
   cin >> x;
 
   int  no_digits  = 0;

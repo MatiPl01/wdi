@@ -1,24 +1,33 @@
 #include <iostream>
 
-#include "main.h"
+/**
+ * Napisz program wczytujący liczbę naturalną z klawiatury i odpowiadający na pytanie, czy liczba
+ * zakończona jest unikalną cyfrą.
+ */
 
 using namespace std;
 
 #ifndef TEST
 int main()
 {
-  int a, b;
-  cin >> a >> b;
+  int x;
+  cin >> x;
 
-  int c = add(a, b);
+  bool digits[10] = {false};
+  int  mask       = 10;
+  int  last       = x % 10;
 
-  cout << c;
+  while(mask <= x)
+  {
+    digits[(x / mask) % 10] = true;
+    mask *= 10;
+  }
+
+  if(!digits[last])
+    cout << "TAK" << endl;
+  else
+    cout << "NIE" << endl;
 
   return 0;
 }
 #endif
-
-int add(int a, int b)
-{
-  return a + b;
-}
