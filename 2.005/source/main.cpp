@@ -1,24 +1,42 @@
 #include <iostream>
-
-#include "main.h"
+#include "math.h"
 
 using namespace std;
+
+/**
+ * Napisz program wczytujący liczbę naturalną z klawiatury i odpowiadający na pytanie, czy jej cyfry
+ * stanowią ciąg rosnący.
+ */
+
+int get_digit(long source, int index)
+{
+  return (source / (int) pow(10, index)) % 10;
+}
 
 #ifndef TEST
 int main()
 {
-  int a, b;
-  cin >> a >> b;
+  int x;
+  cin >> x;
 
-  int c = add(a, b);
+  int  index  = 0;
+  int  last   = get_digit(x, index++);
+  bool result = true;
 
-  cout << c;
+  while(result && pow(10, index) <= x)
+  {
+    int curr = get_digit(x, index++);
+    if(curr <= last)
+      result = false;
+
+    last = curr;
+  }
+
+  if(result)
+    cout << "TAK" << endl;
+  else
+    cout << "NIE" << endl;
 
   return 0;
 }
 #endif
-
-int add(int a, int b)
-{
-  return a + b;
-}
