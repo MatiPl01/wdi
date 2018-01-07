@@ -99,8 +99,8 @@ Napisać program, który wyznacza ostatnia niezerową cyfra N! Program powinien 
 Dana jest liczba naturalna o niepowtarzających się cyfrach pośród których nie ma zera. Ile różnych liczb podzielnych np. przez 7 można otrzymać poprzez wykreślenie dowolnych cyfr w tej liczbie. Np. dla 2315 będą to 21, 35, 231, 315.
 
 ##2.013 
-Dane są dwie liczby naturalne z których budujemy trzecią liczbę. W budowanej liczbie muszą wystąpić wszystkie cyfrywystępujące w liczbach wejściowych. Wzajemna kolejność cyfr każdej z liczb wejściowych musi być zachowana. Na przykład mając liczby 123 i 75 możemy zbudować liczby 12375, 17523, 75123, 17253,itd. Proszę napisać 
-funkcję która wyznaczy ile liczb pierwszych można zbudować z dwóch zadanych liczb.
+Dane są dwie liczby naturalne z których budujemy trzecią liczbę. W budowanej liczbie muszą wystąpić wszystkie cyfrywystępujące w liczbach wejściowych. Wzajemna kolejność cyfr każdej z liczb wejściowych musi być zachowana. Na przykład mając liczby 123 i 75 możemy zbudować liczby 12375, 17523, 75123, 17253,itd. Proszę napisać  funkcję która wyznaczy ile liczb pierwszych można zbudować z dwóch zadanych liczb.
+
 ##2.014 
 Napisać program znajdujący wszystkie liczby N-cyfrowe dla których suma N-tych potęg cyfr liczby jest równa tej liczbie, np. 153=1^3+5^3+3^3.
 
