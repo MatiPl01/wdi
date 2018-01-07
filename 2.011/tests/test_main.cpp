@@ -5,15 +5,15 @@
 
 void test_test(void)
 {
-  TEST_ASSERT_EQUAL(calculate_last_digit_of_factorial(1),  1);
-  TEST_ASSERT_EQUAL(calculate_last_digit_of_factorial(2),  2);
-  TEST_ASSERT_EQUAL(calculate_last_digit_of_factorial(3),  6);
-  TEST_ASSERT_EQUAL(calculate_last_digit_of_factorial(4),  4);
-  TEST_ASSERT_EQUAL(calculate_last_digit_of_factorial(5),  2);
-  TEST_ASSERT_EQUAL(calculate_last_digit_of_factorial(6),  2);
-  TEST_ASSERT_EQUAL(calculate_last_digit_of_factorial(7),  4);
-  TEST_ASSERT_EQUAL(calculate_last_digit_of_factorial(8),  2);
-  TEST_ASSERT_EQUAL(calculate_last_digit_of_factorial(9),  8);
+  TEST_ASSERT_EQUAL(calculate_last_digit_of_factorial(1), 1);
+  TEST_ASSERT_EQUAL(calculate_last_digit_of_factorial(2), 2);
+  TEST_ASSERT_EQUAL(calculate_last_digit_of_factorial(3), 6);
+  TEST_ASSERT_EQUAL(calculate_last_digit_of_factorial(4), 4);
+  TEST_ASSERT_EQUAL(calculate_last_digit_of_factorial(5), 2);
+  TEST_ASSERT_EQUAL(calculate_last_digit_of_factorial(6), 2);
+  TEST_ASSERT_EQUAL(calculate_last_digit_of_factorial(7), 4);
+  TEST_ASSERT_EQUAL(calculate_last_digit_of_factorial(8), 2);
+  TEST_ASSERT_EQUAL(calculate_last_digit_of_factorial(9), 8);
   TEST_ASSERT_EQUAL(calculate_last_digit_of_factorial(10), 8);
   TEST_ASSERT_EQUAL(calculate_last_digit_of_factorial(11), 8);
   TEST_ASSERT_EQUAL(calculate_last_digit_of_factorial(12), 6);
@@ -105,4 +105,3 @@ void test_test(void)
   TEST_ASSERT_EQUAL(calculate_last_digit_of_factorial(98), 6);
   TEST_ASSERT_EQUAL(calculate_last_digit_of_factorial(99), 4);
 }
-

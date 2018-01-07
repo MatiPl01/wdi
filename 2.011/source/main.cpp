@@ -9,17 +9,17 @@ using namespace std;
 
 int calculate_last_digit_of_factorial(int N)
 {
-  int result = 1;
-  int last_result = 1;
-  int mask   = 10;
+  int result             = 1;
+  int last_result        = 1;
+  int mask               = 10;
   int result_mask_offset = 10;
 
   for(int i = 1; i <= N; i++)
   {
-  	if(i == 10)
-  		result_mask_offset *= 10;
-  	cout << i << endl;
-    result = last_result*i;
+    if(i == 10)
+      result_mask_offset *= 10;
+    cout << i << endl;
+    result = last_result * i;
     cout << result << endl;
     while(result % mask == 0)
       mask *= 10;
