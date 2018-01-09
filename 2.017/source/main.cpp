@@ -1,24 +1,29 @@
 #include <iostream>
 
-#include "main.h"
-
 using namespace std;
+
+/*
+ * Napisać program poszukujący trójkątów Pitagorejskich.
+ */
 
 #ifndef TEST
 int main()
 {
-  int a, b;
-  cin >> a >> b;
+  int N;
+  cin >> N;
 
-  int c = add(a, b);
-
-  cout << c;
+  for(int a = 1; a <= N; a++)
+  {
+    int c = 1;
+    for(int b = a; b <= N; b++)
+    {
+      while(c * c < a * a + b * b)
+        c++;
+      if(c * c <= a * a + b * b)
+        cout << a << "\t" << b << "\t" << c << endl;
+    }
+  }
 
   return 0;
 }
 #endif
-
-int add(int a, int b)
-{
-  return a + b;
-}

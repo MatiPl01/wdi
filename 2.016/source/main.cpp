@@ -33,7 +33,7 @@ bool is_carmichaels(int n, bool * primes)
   for(int i = 1; i <= n; i++)
     if(nwd(i, n) == 1)
     {
-    	cout << pow(i, n - 1) << " ";
+      cout << pow(i, n - 1) << " ";
       result &= (pow(i, n - 1) - 1) % n == 0;
     }
   cout << !primes[n] << " " << result << endl;
@@ -42,23 +42,23 @@ bool is_carmichaels(int n, bool * primes)
 
 /*bool is_carmichaels(int n, bool * primes)
 {
-	int M = 0;
-	int m = 1;
-	while(M <= n)
-	{
-		int a = (6 * m) + 1;
-		int b = (12 * m) + 1;
-		int c = (18 * m) + 1;
-		if(primes[a] && primes[b] && primes[c])
-		{
-			M = a*b*c;
-			cout << M << " ";
-			if(M == n)
-				return true;
-		}
-		m++;
-	}
-	return false;
+  int M = 0;
+  int m = 1;
+  while(M <= n)
+  {
+    int a = (6 * m) + 1;
+    int b = (12 * m) + 1;
+    int c = (18 * m) + 1;
+    if(primes[a] && primes[b] && primes[c])
+    {
+      M = a*b*c;
+      cout << M << " ";
+      if(M == n)
+        return true;
+    }
+    m++;
+  }
+  return false;
 }*/
 
 bool * find_primes(int N)
