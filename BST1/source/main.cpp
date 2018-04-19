@@ -29,16 +29,16 @@ void add_node(BSTnode* &root, int value){
     while(tmpRoot != NULL){
         prevRoot = tmpRoot;
         if(tmpRoot->val < value)
-            tmpRoot = tmpRoot->left;
-        else
             tmpRoot = tmpRoot->right;
+        else
+            tmpRoot = tmpRoot->left;
     }
 
     // Insert the new node
     if(prevRoot->val < value)
-        prevRoot->left = tmp;
-    else{
         prevRoot->right = tmp;
+    else{
+        prevRoot->left = tmp;
     }
 }
 
