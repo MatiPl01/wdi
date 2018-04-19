@@ -9,11 +9,14 @@ function(createTest TEST_NAME TEST_SRC)
                            COMMAND ruby ${UNITY_SCRIPTS}/generate_test_runner.rb ${TEST_SRC} ${TEST_NAME}_runner.cpp
                            DEPENDS ${TEST_SRC})
 
-    add_executable        (${TEST_NAME} ${TEST_SRC}
-                           ${TEST_NAME}_runner.cpp)
+    add_executable        (${TEST_NAME} ${TEST_SRC} ${TEST_NAME}_runner.cpp)
     target_link_libraries (${TEST_NAME} unity)
 
     add_dependencies      (check        ${TEST_NAME})
     add_test              (${TEST_NAME} ${TEST_NAME})
+
+    add_custom_command    (TARGET ${TEST_NAME}
+                           POST_BUILD
+                           COMMAND ${CMAKE_CURRENT_BINARY_DIR}/${TEST_NAME})
 
 endfunction()
